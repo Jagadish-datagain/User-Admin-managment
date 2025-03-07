@@ -93,7 +93,7 @@ def import_csv_page():
     
     if uploaded_file is not None:
         try:
-            df = pd.read_csv(file_path, dtype=str, low_memory=False)  # Load everything as string
+            df = pd.read_csv(uploaded_file, dtype=str, low_memory=False)  # Load everything as string
             df.fillna("", inplace=True)  # Replace NaN values with empty strings
             df.columns = clean_column_names(df.columns)
             df.index = range(1, len(df) + 1)

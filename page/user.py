@@ -1,5 +1,7 @@
 import streamlit as st
 import page.export_data as export_data  # Import the export_data.py page
+from page.audit_loger import log_user_login, log_user_logout
+
 
 def user_page():
     # Ensure username and email are fetched from session state
@@ -14,7 +16,7 @@ def user_page():
     """)
 
     # Sidebar options for "Export Data" and "Logout"
-    option = st.sidebar.radio("Select Option", ["Export Data", "Logout"], key="user_options")
+    option = st.sidebar.radio("Select Option", ["Export Data"], key="user_options")
 
     # Handle "Export Data" selection
     if option == "Export Data":
