@@ -12,7 +12,7 @@ REQUIRED_COLUMNS = [
     "IND Date", "IND Time", "Team", "Agent", "Unique ID", "Priority", "Month", "Hour", "EMEA"
 ]
 
-TABLE_NAME = "managed"  # All records will go into this table
+TABLE_NAME = "managed_services"  # All records will go into this table
 
 # Column Data Type Mapping
 COLUMN_DATA_TYPES = {
