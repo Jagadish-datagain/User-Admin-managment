@@ -104,7 +104,7 @@ if st.session_state.page == "Login":
             st.success(f"Logged in as Admin: {st.session_state.username}")
             st.session_state.logged_in = True
             st.session_state.page = "Admin"
-        elif role == "user" and department=="manage_services":
+        elif role == "user" and department=="managed_service":
             st.success(f"Logged in as User: {st.session_state.username}")
             st.session_state.logged_in = True
             st.session_state.page = "user"
