@@ -83,8 +83,6 @@ if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 if "role" not in st.session_state:
     st.session_state.role = None
-if "department" not in st.session_state:
-    st.session_state.department = None
 if "username" not in st.session_state:
     st.session_state.username = None
 if "email" not in st.session_state:
