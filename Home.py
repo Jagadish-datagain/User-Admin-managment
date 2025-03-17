@@ -66,7 +66,6 @@ def login(email, password):
                 st.session_state.username = name
                 st.session_state.email = email
                 st.session_state.role = role
-                 st.session_state.department = department
 
                 # ✅ Fix: Pass all required arguments correctly
                 log_user_login(email, name, role,department)
