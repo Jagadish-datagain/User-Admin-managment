@@ -68,7 +68,7 @@ def login(email, password):
                 st.session_state.role = role
 
                 # ✅ Fix: Pass all required arguments correctly
-                log_user_login(email, name, role,department)
+                log_user_login(email, name, role)
 
                 return role 
             else:
