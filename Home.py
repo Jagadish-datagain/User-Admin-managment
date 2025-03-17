@@ -54,7 +54,7 @@ def login(email, password):
     connection = get_connection()
     if connection:
         try:
-            query = "SELECT employee_name, email, role FROM employees WHERE email = %s AND password = %s;"
+            query = "SELECT employee_name, email, role,department FROM employees WHERE email = %s AND password = %s;"
             cursor = connection.cursor()
             cursor.execute(query, (email.strip(), password.strip()))
             result = cursor.fetchone()
@@ -66,11 +66,12 @@ def login(email, password):
                 st.session_state.username = name
                 st.session_state.email = email
                 st.session_state.role = role
+                 st.session_state.department = department
 
                 # ✅ Fix: Pass all required arguments correctly
-                log_user_login(email, name, role)
+                log_user_login(email, name, role,department)
 
-                return role
+                return role 
             else:
                 return None
         except Exception as e:
@@ -83,6 +84,8 @@ if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 if "role" not in st.session_state:
     st.session_state.role = None
+if "department" not in st.session_state:
+    st.session_state.department = None
 if "username" not in st.session_state:
     st.session_state.username = None
 if "email" not in st.session_state:
