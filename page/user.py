@@ -2,7 +2,6 @@ import streamlit as st
 import page.export_data as export_data  # Import the export_data.py page
 from page.audit_loger import log_user_login, log_user_logout
 
-
 def user_page():
     # Ensure username and email are fetched from session state
     username = st.session_state.get("username", "Not Available")
