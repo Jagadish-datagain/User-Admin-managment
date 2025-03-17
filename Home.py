@@ -107,7 +107,7 @@ if st.session_state.page == "Login":
         elif role == "user":
             st.success(f"Logged in as User: {st.session_state.username}")
             st.session_state.logged_in = True
-            st.session_state.page = "User"
+            st.session_state.page = "User1"
         else:
             st.error("Invalid credentials. Please try again.")
 
