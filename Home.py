@@ -54,7 +54,7 @@ def login(email, password):
     connection = get_connection()
     if connection:
         try:
-            query = "SELECT employee_name, email, role,department FROM employees WHERE email = %s AND password = %s;"
+            query = "SELECT employee_name, email, role FROM employees WHERE email = %s AND password = %s;"
             cursor = connection.cursor()
             cursor.execute(query, (email.strip(), password.strip()))
             result = cursor.fetchone()
@@ -70,7 +70,7 @@ def login(email, password):
                 # ✅ Fix: Pass all required arguments correctly
                 log_user_login(email, name, role)
 
-                return role 
+                return role
             else:
                 return None
         except Exception as e:
@@ -104,10 +104,10 @@ if st.session_state.page == "Login":
             st.success(f"Logged in as Admin: {st.session_state.username}")
             st.session_state.logged_in = True
             st.session_state.page = "Admin"
-        elif role == "user" and department=="managed_service":
+        elif role == "user":
             st.success(f"Logged in as User: {st.session_state.username}")
             st.session_state.logged_in = True
-            st.session_state.page = "user"
+            st.session_state.page = "User"
         else:
             st.error("Invalid credentials. Please try again.")
 
